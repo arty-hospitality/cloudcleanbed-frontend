@@ -1,0 +1,3 @@
+﻿build:
+  command: cd frontend && ng build --configuration production
+  directory: frontend/dist/frontend
