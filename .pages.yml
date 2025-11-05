@@ -1,4 +1,21 @@
-﻿version: 1
+# Cloudflare Pages configuration for Angular app
+# File: .pages.yml
+
+version: 1
+
 build:
   command: npm run build
-  directory: dist/frontend
+  directory: dist/cloudcleanbed
+
+# Optional: environment variables (use these if you have API URLs, etc.)
+environment:
+  NODE_VERSION: 22.16.0
+  NPM_VERSION: 10.9.2
+  CI: true
+  CF_PAGES: 1
+
+# Optional caching for faster builds
+cache:
+  paths:
+    - node_modules
+    - .angular/cache
