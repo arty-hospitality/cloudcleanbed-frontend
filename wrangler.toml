@@ -1,0 +1,10 @@
+name = "cloudcleanbed-frontend"
+main = "dist/frontend"
+compatibility_date = "2025-11-05"
+
+[site]
+bucket = "dist/frontend"
+entry-point = "."
+
+[build]
+command = "npm run build"
