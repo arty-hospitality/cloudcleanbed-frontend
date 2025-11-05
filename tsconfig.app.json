@@ -2,20 +2,16 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/app",
-    "types": ["node"],
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "types": []
   },
-  "files": [
-    "src/main.ts"
-  ],
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts"
+  "files": ["src/main.ts"],
+  "include": ["src/**/*.d.ts"],
+  "exclude": [
+    "src/app/app.ts",
+    "src/app/components/header/header.ts",
+    "src/app/components/kanban-board/kanban-board.ts",
+    "src/app/core/supabase.service.ts",
+    "src/app/models/**/*.ts",
+    "src/environments/**/*.ts"
   ]
 }
