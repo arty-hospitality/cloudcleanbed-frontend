@@ -1,7 +1,7 @@
 {
-  "name": "housekeeping-saas-frontend",
+  "name": "cloudcleanbed-frontend",
   "version": "1.0.0",
-  "description": "Angular frontend for Housekeeping SaaS Tool",
+  "description": "Angular frontend for CloudCleanBed tool",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
