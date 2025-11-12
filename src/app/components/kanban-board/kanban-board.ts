@@ -8,8 +8,8 @@ import { Task, TaskStatus, KanbanColumn } from '../../models/task.model.ts';
   selector: 'app-kanban-board',
   standalone: true,
   imports: [CommonModule, DragDropModule],
-  templateUrl: './kanban-board.component.html',
-  styleUrls: ['./kanban-board.component.css']
+  templateUrl: './components/kanban-board/kanban-board.html',
+  styleUrls: ['./components/kanban-board/kanban-board.css']
 })
 export class KanbanBoardComponent implements OnInit, OnDestroy {
 
