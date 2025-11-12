@@ -9,8 +9,7 @@ import { environment } from '../../environments/environment';
 export class KanbanService {
   private supabase: SupabaseClient;
   private realtimeChannel?: RealtimeChannel;
-  
-  // Using Angular 20 signals for reactive state
+ 
   tasks = signal<Task[]>([]);
   loading = signal<boolean>(false);
   error = signal<string | null>(null);
@@ -22,7 +21,6 @@ export class KanbanService {
     );
   }
 
-  // Initialize real-time subscription
   subscribeToTasks() {
     this.realtimeChannel = this.supabase
       .channel('tasks-channel')
@@ -43,7 +41,6 @@ export class KanbanService {
     }
   }
 
-  // Load all tasks
   async loadTasks(): Promise<void> {
     this.loading.set(true);
     this.error.set(null);
@@ -65,7 +62,6 @@ export class KanbanService {
     }
   }
 
-  // Create new task
   async createTask(task: Partial<Task>): Promise<Task | null> {
     try {
       const { data, error } = await this.supabase
@@ -87,7 +83,6 @@ export class KanbanService {
     }
   }
 
-  // Update task status (main Kanban action)
   async updateTaskStatus(taskId: string, newStatus: TaskStatus): Promise<boolean> {
     try {
       const updateData: any = {
@@ -95,7 +90,6 @@ export class KanbanService {
         updated_at: new Date().toISOString()
       };
 
-      // Track when task moves to in_progress
       if (newStatus === TaskStatus.IN_PROGRESS) {
         updateData.started_at = new Date().toISOString();
       }
